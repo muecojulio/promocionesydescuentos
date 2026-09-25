@@ -1,5 +1,5 @@
-const CACHE = "promos-mx-v2";
-const SHELL = ["/", "/manifest.json", "/icon-192.png", "/icon-512.png", "/privacidad", "/terminos"];
+const CACHE = "promos-mx-v3";
+const SHELL = ["/", "/manifest.json", "/icon.svg", "/icon-192.svg", "/icon-512.svg", "/privacidad", "/terminos"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

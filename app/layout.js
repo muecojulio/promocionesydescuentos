@@ -6,6 +6,10 @@ export const metadata = {
   description:
     "Promociones activas, liquidaciones, MSI, cupones y códigos de tiendas en México. Se actualiza al refrescar.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/icon-192.svg",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -25,7 +29,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <head>
-        <link rel="apple-touch-icon" href="/icon-192.png" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon-192.svg" />
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
