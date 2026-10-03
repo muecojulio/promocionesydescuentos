@@ -5,6 +5,7 @@ import { leerCache, guardarCache, invalidarCache } from "../../../lib/cache.js";
 import { estaActiva, formatearFechaHora, hoyISO } from "../../../lib/vigencia.js";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 15;
 
 const RATE = new Map();
 const RATE_WINDOW_MS = 60_000;

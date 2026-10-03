@@ -16,6 +16,16 @@ const nextConfig = {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=()",
           },
+          { key: "X-DNS-Prefetch-Control", value: "off" },
+        ],
+      },
+      {
+        source: "/:file*.(png|svg|ico)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
     ];

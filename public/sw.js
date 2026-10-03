@@ -1,5 +1,16 @@
 const CACHE = "promos-mx-v3";
-const SHELL = ["/", "/manifest.json", "/icon.svg", "/icon-192.svg", "/icon-512.svg", "/privacidad", "/terminos"];
+const SHELL = [
+  "/",
+  "/manifest.json",
+  "/favicon.ico",
+  "/icon.svg",
+  "/icon-192.png",
+  "/icon-512.png",
+  "/icon-192.svg",
+  "/icon-512.svg",
+  "/privacidad",
+  "/terminos",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
