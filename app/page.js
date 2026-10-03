@@ -30,9 +30,8 @@ export default function Home() {
     if (forzar) setRefrescando(true);
     else setCargando(true);
     try {
-      const params = new URLSearchParams();
-      if (forzar) params.set("refresh", "1");
-      const res = await fetch(`/api/ofertas?${params.toString()}`, { cache: "no-store" });
+      const url = forzar ? "/api/ofertas?refresh=1" : "/api/ofertas";
+      const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       setOfertas(Array.isArray(data.ofertas) ? data.ofertas : []);
@@ -53,7 +52,7 @@ export default function Home() {
     return ofertas.filter((o) => {
       if (categoria !== "Todas" && o.categoria !== categoria) return false;
       if (!q) return true;
-      const texto = `${o.tienda} ${o.titulo} ${o.descripcion} ${o.cupon} ${o.codigo} ${o.banco}`.toLowerCase();
+      const texto = `${o.tienda || ""} ${o.titulo || ""} ${o.descripcion || ""} ${o.cupon || ""} ${o.codigo || ""} ${o.banco || ""}`.toLowerCase();
       return texto.includes(q);
     });
   }, [ofertas, categoria, busqueda]);
@@ -61,7 +60,9 @@ export default function Home() {
   const handleRefresh = useCallback(() => {
     setBusqueda("");
     setCategoria("Todas");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
     cargar(true);
   }, [cargar]);
 
