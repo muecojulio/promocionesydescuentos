@@ -8,7 +8,9 @@ export default function Terminos() {
   return (
     <main className="legal">
       <p>
-        <Link href="/">← Volver</Link>
+        <Link className="ui-back" href="/">
+          ← Volver
+        </Link>
       </p>
       <h1>Términos de uso</h1>
       <p>Última actualización: 25 de septiembre de 2026.</p>
