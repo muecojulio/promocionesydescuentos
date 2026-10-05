@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./ui/interactions.css";
 import { Suspense } from "react";
 
 export const metadata = {
