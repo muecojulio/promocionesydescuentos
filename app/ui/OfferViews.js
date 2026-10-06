@@ -107,6 +107,18 @@ export function OfferBody({ oferta, compact, consulta, onAnnounce }) {
             onClick={() => copyValue(cupon, "cupón")}
           />
         ) : null}
+        {codigo ? (
+          <Button
+            variant="quiet"
+            state={copyWhat === "código" ? copyState : "idle"}
+            idleLabel={`Copiar ${codigo}`}
+            loadingLabel="Copiando"
+            successLabel="Copiado"
+            errorLabel="No se pudo copiar"
+            aria-label={`Copiar código ${codigo}`}
+            onClick={() => copyValue(codigo, "código")}
+          />
+        ) : null}
         {oferta.url ? (
           <a className="card-link" href={oferta.url} target="_blank" rel="noopener noreferrer">
             Ver fuente
